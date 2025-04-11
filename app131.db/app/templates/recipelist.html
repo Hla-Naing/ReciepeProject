@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+  <h1>Recipes</h1>
+  <ul>
+      {% for recipe in recipes %}
+          <li>
+              <a href="/recipe/{{ recipe.id }}">{{ recipe.title }}</a>
+              <form action="/recipe/{{ recipe.id }}/delete" method="post" style="display:inline;">
+                  <button type="submit">Delete</button>
+              </form>
+          </li>
+      {% endfor %}
+  </ul>
+  <a href="/recipe/new">Add New Recipe</a>
+
+</body>
+</html>
+
